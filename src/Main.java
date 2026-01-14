@@ -1,15 +1,3 @@
-/*
-Створіть Java програму з використанням методів, яка виконує наступні завдання:
-
-   + Напишіть метод, який приймає ціле число як аргумент і виводить його квадрат.
-   + Напишіть метод, який приймає два аргументи типу double - радіус та висоту - і повертає об'єм циліндра. Виведіть об'єм циліндра на екран.
-   + Напишіть метод, який приймає масив цілих чисел та обчислює і повертає суму всіх елементів масиву.
-   + Напишіть метод, який приймає рядок (String) як аргумент та повертає новий рядок, який складається з
-     букв цього рядка у зворотньому порядку.
-   + Напишіть метод, який приймає два цілих числа, a та b, і повертає результат a^b (a підняте до степеня b).
-    Напишіть метод, який приймає параметри: ціле число n і рядок text. Метод повинен вивести текстовий рядок text n рази, розділяючи кожен рядок символом переносу.
-    Залийте виконаний проект на свій GitHub репозиторій, посилання на який зазначте в LMS.
-* */
 void main() { // Create a Scanner object
     System.out.print("Введіть ціле число: ");
     var number = new Scanner(System.in).nextInt();
@@ -35,6 +23,12 @@ void main() { // Create a Scanner object
     var bNumber =  new Scanner(System.in).nextInt();
     var graduallyOfAAndB = getGradual(aNumber,bNumber);
     System.out.print("Результат "+aNumber+"^"+bNumber+" дорівнює "+graduallyOfAAndB+"\n");
+
+    System.out.print("Введіть ціле число n:");
+    var numberOfIterations =  new Scanner(System.in).nextInt();
+    System.out.print("Введіть текстовий рядок:");
+    var separatorOfStr =  new Scanner(System.in).nextLine();
+    makeStringOutput (numberOfIterations,separatorOfStr);
 
     System.out.println("Об'єм циліндра з радіусом "+radius+" і висотою "+height+" дорівнює "+volume);
     System.out.println("Масив чисел "+ Arrays.toString(arrayOfInt));
@@ -63,4 +57,10 @@ String makeReversString (String str){
 
 int getGradual(int a, int b){
      return a^b;
+}
+
+void makeStringOutput (int n , String separator){
+    for(int i = 0; i < n; i++){
+        System.out.println(separator);
+    }
 }
